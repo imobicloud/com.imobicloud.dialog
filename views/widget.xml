@@ -1,0 +1,5 @@
+<Alloy>
+	<View class="imc-dialog">
+		<View id="overlay" class="imc-dialog-overlay"/>
+	</View>
+</Alloy>

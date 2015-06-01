@@ -1,0 +1,2 @@
+".container": { backgroundColor: "white" }
+	".dialog": { width: 300, height: 300, backgroundColor: '#fff' }

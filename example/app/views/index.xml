@@ -1,0 +1,13 @@
+<Alloy>
+	<Window class="container">
+		
+		<Button width="200" height="40" backgroundColor="#000" color="#fff" onClick="showDialog">Show dialog</Button>
+		
+		<Widget id="dialog" src="com.imobicloud.dialog">
+			<View class="dialog">
+				<Label>dialog content</Label>
+			</View>
+		</Widget>
+		
+	</Window>
+</Alloy>
