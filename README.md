@@ -4,7 +4,7 @@
 
 xml
 	
-	<Widget id="dialog" src="com.imobicloud.dialog" persistent="false" visible="false" classes="dialog-container">
+	<Widget id="dialog" src="com.imobicloud.dialog" persistent="false" class="dialog-container">
 		<View class="dialog"></View>
 	</Widget>
 
@@ -30,3 +30,7 @@ js
 	
 	// hide dialog
 	$.dialog.hide();
+	
+Changes log:
+- Remove visible parameter
+- Support tss class for widget

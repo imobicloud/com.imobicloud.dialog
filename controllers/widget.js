@@ -17,14 +17,13 @@ exports.hide = hideDialog;
 
 /*
  args = {
- 	persistent: 'false',
- 	visible: 'false'
+ 	persistent: 'false'
  }
  * */
 function loadContent(args) {
 	var dialog = $.getView();
 	
-	var exclude = ['id', 'persistent', 'visible', 'children'];
+	var exclude = ['id', 'persistent', 'children'];
 	dialog.applyProperties( _.omit(args, exclude) );
 	
 	if (args.persistent != 'true') {
@@ -37,10 +36,5 @@ function loadContent(args) {
 		});
 		delete args.id;
 		delete args.children;
-	}
-	
-	if (args.visible == 'true') {
-		dialog.opacity = 1;
-		dialog.visible = true;
 	}
 }
