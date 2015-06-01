@@ -1,5 +1,7 @@
 # Titanium UI - Dialog
 
+![Dialog example](http://i.imgur.com/DtQCVIA.png)
+
 xml
 	
 	<Widget id="dialog" src="com.imobicloud.dialog" persistent="false" visible="false" classes="dialog-container">
