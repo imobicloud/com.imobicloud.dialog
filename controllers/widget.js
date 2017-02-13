@@ -1,40 +1,37 @@
-loadContent(arguments[0] || {});
+var args = $.args;
+var body;
 
-exports.show = function(callback) {
-	var dialog = $.getView();
-	dialog.visible = true;
-	dialog.animate({ opacity : 1 }, callback || function() {});
-};
-
-function hideDialog(e) {
-	$.getView().animate({ opacity : 0 }, function() { 
-		$.getView().visible = false;
-		$.trigger('hide'); 
-	});
+init();
+function init() {
+    body = Alloy.createController(args.url, args.data);
+    body.on('done', hideDialog);
+    $.win.add( body.getView() );
+    args.data = null;
 }
 
-exports.hide = hideDialog;
+exports.show = function() {
+    $.win.open();
+};
 
-/*
- args = {
- 	persistent: 'false'
- }
- * */
-function loadContent(args) {
-	var dialog = $.getView();
-	
-	var exclude = ['id', 'persistent', 'children'];
-	dialog.applyProperties( _.omit(args, exclude) );
-	
-	if (args.persistent != 'true') {
-		$.overlay.addEventListener('click', hideDialog);
-	}
-	
-	if (args.children) {
-		_.each(args.children, function(child) {
-			dialog.add(child);
-		});
-		delete args.id;
-		delete args.children;
-	}
+function winOpen(e) {
+    $.win.animate({ opacity: 1, duration: 400 }, function() {
+        body && body.load && body.load();
+    });
+}
+
+function winClose() {
+    if (body) {
+        body.unload && body.unload();
+        body = null;
+    }
+}
+
+function hideDialog(e) {
+    if (e._hideDialog !== false) {
+        $.win.animate({ opacity: 0, duration: 400 }, function() {
+            $.win.close();
+        });
+        delete e._hideDialog;
+    }
+    $.trigger('done', e);
 }

@@ -1,4 +1,3 @@
-/*
-".imc-dialog": { visible: false, opacity: 0, zIndex: 1 }
-	".imc-dialog-overlay": { backgroundColor: '#80000000' }
-*/	
+".win": { opacity: 0 }
+".theme-dialog": { backgroundColor: '#E6082e3d' }
+    ".overlay": {}

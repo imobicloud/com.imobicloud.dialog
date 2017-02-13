@@ -1,0 +1,11 @@
+<Alloy>
+	<View class="container">
+		<Label class="title">Blokkeer gebruiker</Label>
+		<Label class="message">Wil je deze gebruiker blokkeren, waardoor je geen berichten meer ontvangt van deze gebruiker?</Label>
+		<View class="buttons">
+			<View class="border"/>
+			<Button class="button button-cancel" onClick="doCancel">Annuleer</Button>
+			<Button class="button button-submit" onClick="doSubmit">Blokkeer</Button>
+		</View>
+	</View>
+</Alloy>

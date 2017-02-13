@@ -1,2 +1,1 @@
-".imc-dialog": { visible: false, opacity: 0, zIndex: 1 }
-	".imc-dialog-overlay": { backgroundColor: '#80000000' }
+".theme-dialog": { backgroundColor: '#90ffffff' }

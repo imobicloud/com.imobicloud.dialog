@@ -1,5 +1,7 @@
 <Alloy>
-	<View class="imc-dialog">
-		<View id="overlay" class="imc-dialog-overlay"/>
-	</View>
+	<Window id="win" class="win nav-hidden theme-dialog" onOpen="winOpen" onClose="winClose">
+
+		<View class="overlay" if="$.args.tapOutsideToHideDialog" onClick="hideDialog"/>
+
+	</Window>
 </Alloy>

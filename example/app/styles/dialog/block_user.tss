@@ -1,0 +1,9 @@
+".container": { height: Ti.UI.SIZE, top: 101, left: 27.5, right: 21.5, layout: 'vertical',
+    backgroundColor: '#fff', borderColor: '#90000000', borderWidth: 0.5, borderRadius: 10 }
+    ".title": { top: 29, color: '#ed4400', font: { fontSize: 22 } }
+    ".message": { top: 14, left: 50, right: 50, color: '#65707a', font: { fontSize: 16 }, textAlign: 'center' }
+    ".buttons": { height: 44.5, top: 67 }
+        ".border": { height: 0.5, top: 0, backgroundColor: '#c1c6ca' }
+        ".button": { width: '50%', height: '100%', font: { fontSize: 18 } }
+        ".button-cancel": { left: 0, backgroundColor: 'transparent', color: '#65707a' }
+        ".button-submit": { right: 0, backgroundColor: '#ed4400', color: '#fff' }
