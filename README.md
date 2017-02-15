@@ -2,35 +2,34 @@
 
 ![Dialog example](http://i.imgur.com/DtQCVIA.png)
 
-xml
-	
-	<Widget id="dialog" src="com.imobicloud.dialog" persistent="false" class="dialog-container">
-		<View class="dialog"></View>
-	</Widget>
-
 tss
 
 	// app.tss
-	".imc-dialog": { visible: false, opacity: 0, zIndex: 1 }
-		".imc-dialog-overlay": { backgroundColor: '#80000000' }
-	
-	// custom style	
-	".dialog-container": { visible: true, opacity: 1, zIndex: 5 } // auto show on load
-		".dialog": { width: 300, height: 300, backgroundColor: '#fff' }
-	
+	".theme-dialog": { backgroundColor: '#90ffffff' }
+
 js
-	
-	// show dialog
-	$.dialog.show();
-	
-	// show dialog with callback
-	$.dialog.show(function(){
-		// do something
+
+	var dialog = Alloy.createWidget('com.imobicloud.dialog', {
+		url: 'dialog/block_user',
+		date: {}
 	});
-	
-	// hide dialog
-	$.dialog.hide();
-	
+	dialog.on('done', function(e) {
+		if (e.value) {
+			alert('TODO');
+		}
+	});
+	dialog.show();
+
 Changes log:
+
+- 13/12/2017
+    + add theme-dialog style
+    + add tapOutsideToHideDialog: default false
+        If true: Tap on the overlay will hide this dialog
+    + dialog is now a window, use createWidget to open dialog, with 2 params: url and data
+        * url: the path to the dialog content
+        * data: data will be passed to dialog content
+    + add event 'done'
+        Pass _hideDialog: true to hide this dialog from content inside
 - Remove visible parameter
 - Support tss class for widget
