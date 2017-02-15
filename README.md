@@ -11,7 +11,7 @@ js
 
 	var dialog = Alloy.createWidget('com.imobicloud.dialog', {
 		url: 'dialog/block_user',
-		date: {}
+		data: {}
 	});
 	dialog.on('done', function(e) {
 		if (e.value) {
