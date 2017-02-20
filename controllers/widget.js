@@ -3,6 +3,12 @@ var body;
 
 init();
 function init() {
+    var exclude = [
+		'id', 'children',
+        'url', 'data'
+	];
+	$.win.applyProperties(_.omit(args, exclude));
+
     body = Alloy.createController(args.url, args.data);
     body.on('done', hideDialog);
     $.win.add( body.getView() );
