@@ -5,7 +5,7 @@ init();
 function init() {
     var exclude = [
 		'id', 'children',
-        'url', 'data'
+        'tapOutsideToHideDialog', 'url', 'data'
 	];
 	$.win.applyProperties(_.omit(args, exclude));
 
