@@ -13,6 +13,18 @@ function init() {
     body.on('done', hideDialog);
     $.win.add( body.getView() );
     args.data = null;
+    
+    if (OS_ANDROID) {
+        if (parseInt(Titanium.version, 10) >= 6) {
+            $.win.onBack = androidback;
+        } else {
+            $.win.addEventListener('androidback', androidback);
+        }
+    }
+}
+
+function androidback(e) {
+    return;
 }
 
 exports.show = function() {
