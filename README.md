@@ -4,7 +4,7 @@
 
 android theme
 
-	clone [https://github.com/ptquang86/theme/tree/master/anim] to [app/platform/android/res/anim/]
+	clone [https://github.com/ptquang86/template/tree/master/app/platform/android/res] to [app/platform/android/res/anim/]
 
 tss
 
