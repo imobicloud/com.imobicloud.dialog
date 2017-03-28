@@ -28,7 +28,7 @@ function androidback(e) {
 }
 
 exports.show = function() {
-    $.win.open();
+    $.win.open({ animated: false });
 };
 
 function winOpen(e) {
@@ -46,9 +46,16 @@ function winClose() {
 
 function hideDialog(e) {
     if (e._hideDialog !== false) {
-        $.win.animate({ opacity: 0, duration: 400 }, function() {
-            $.win.close();
-        });
+        if (OS_IOS) {
+            $.win.animate({ opacity: 0, duration: 400 }, function() {
+                $.win.close({ animated: false });
+            });
+        } else {
+            $.win.close({ 
+                activityEnterAnimation: Ti.Android.R.anim.dofreeze,
+                activityExitAnimation: Ti.Android.R.anim.dohide
+            });
+        }
         delete e._hideDialog;
     }
     $.trigger('done', e);

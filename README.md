@@ -2,6 +2,10 @@
 
 ![Dialog example](http://i.imgur.com/DtQCVIA.png)
 
+android theme
+
+	clone [https://github.com/ptquang86/theme/tree/master/anim] to [app/platform/android/res/anim/]
+
 tss
 
 	// app.tss
@@ -22,7 +26,9 @@ js
 
 Changes log:
 
-- 13/12/2017
+- 28/03/2017
+	+ support android animation
+- 13/12/2016
     + add theme-dialog style
     + add tapOutsideToHideDialog: default false
         If true: Tap on the overlay will hide this dialog
